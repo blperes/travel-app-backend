@@ -1,6 +1,6 @@
 import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, CreateDateColumn, UpdateDateColumn} from 'typeorm';
 import { Trip } from '../trips/trip.entity';
-import { PointOfInterest } from '../trips/point-of-interest.entity';
+import { PointOfInterest } from '../points-of-interest/point-of-interest.entity';
 
 @Entity()
 export class Location {

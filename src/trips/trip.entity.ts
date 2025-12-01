@@ -1,6 +1,6 @@
 import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { User } from '../users/user.entity';
-import { Location } from '../trips/location.entity';
+import { Location } from '../locations/location.entity';
 
 export enum TripType {
   COMPLETED = 'completed',
@@ -22,6 +22,9 @@ export class Trip {
     enum: TripType,
   })
   type: TripType;
+
+  @Column()
+  days: number;
 
   @ManyToOne(() => User, user => user.trips, { nullable : false})
   user: User;
